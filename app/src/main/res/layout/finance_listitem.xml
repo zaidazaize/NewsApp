@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="news"
+            type="com.example.newsapp.newsdata.News" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="@color/black"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="2dp"
+        app:layout_constraintBaseline_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_marginBottom="16dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/news_mood"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/outline_north_24"
+                tools:src="@drawable/outline_north_24" />
+            <TextClock
+                style="@style/TextAppearance.MaterialComponents.Caption"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@id/new_heading"
+                app:layout_constraintTop_toBottomOf="@id/new_heading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/new_heading"
+                style="@style/TextAppearance.Material3.HeadlineSmall"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:singleLine="true"
+                android:text="Sensex"
+                android:textColor="#D50000"
+                app:layout_constraintBottom_toBottomOf="@+id/news_mood"
+                app:layout_constraintStart_toEndOf="@id/news_mood"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/market_point"
+                style="@style/TextAppearance.Material3.HeadlineSmall"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:singleLine="true"
+                android:text="57000"
+                android:textColor="#D50000"
+                app:layout_constraintBaseline_toBaselineOf="@+id/new_heading"
+                app:layout_constraintStart_toEndOf="@id/new_heading" />
+
+            <ImageView
+                android:id="@+id/image_about_news"
+                android:layout_width="0dp"
+                android:layout_height="180dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/new_heading"
+                app:srcCompat="@mipmap/senseximage" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>
